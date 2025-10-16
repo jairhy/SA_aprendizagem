@@ -1,0 +1,92 @@
+ function gravarDados() {
+            // Captura os valores do formulário
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const cpf = document.getElementById('cpf').value;
+            const telefone = document.getElementById('telefone').value;
+            const dataNascimento = document.getElementById('dataNascimento').value;
+            const genero = document.getElementById('genero').value;
+            const cep = document.getElementById('cep').value;
+            const endereco = document.getElementById('endereco').value;
+            const complemento = document.getElementById('complemento').value;
+            const bairro = document.getElementById('bairro').value;
+            const cidade = document.getElementById('cidade').value;
+            const estado = document.getElementById('estado').value;
+            const observacoes = document.getElementById('observacoes').value;
+
+            // Gera IDs simulados
+            const idCliente = Math.floor(Math.random() * 10000) + 1;
+            const idEndereco = Math.floor(Math.random() * 10000) + 1;
+            const dataAtual = new Date().toISOString().split('T')[0];
+
+            // Monta os comandos SQL
+            const sqlCliente = `INSERT INTO cliente (id_cliente, nome, email, cpf, telefone, data_nascimento, genero, data_cadastro)
+VALUES (${idCliente}, '${nome}', '${email}', '${cpf}', '${telefone}', '${dataNascimento}', '${genero || 'NULL'}', '${dataAtual}');`;
+
+            const sqlEndereco = `INSERT INTO endereco (id_endereco, id_cliente, cep, endereco, complemento, bairro, cidade, estado)
+VALUES (${idEndereco}, ${idCliente}, '${cep}', '${endereco}', '${complemento || 'NULL'}', '${bairro}', '${cidade}', '${estado}');`;
+
+            let sqlObservacoes = '';
+            if (observacoes) {
+                const idObs = Math.floor(Math.random() * 10000) + 1;
+                sqlObservacoes = `\n\nINSERT INTO observacoes_cliente (id_observacao, id_cliente, observacao, data_registro)
+VALUES (${idObs}, ${idCliente}, '${observacoes}', '${dataAtual}');`;
+            }
+
+            // Exibe os comandos SQL
+            document.getElementById('sqlOutput').innerHTML = `
+                <div style="background: #1e1e1e; color: #d4d4d4; padding: 25px; border-radius: 12px; font-family: 'Courier New', monospace; font-size: 14px; line-height: 1.8; overflow-x: auto;">
+                    <p style="color: #6a9955; margin-bottom: 10px;">-- Comando SQL para inserir o cliente:</p>
+                    <pre style="margin: 0; color: #dcdcaa;">${sqlCliente}</pre>
+                    
+                    <p style="color: #6a9955; margin: 20px 0 10px 0;">-- Comando SQL para inserir o endereço:</p>
+                    <pre style="margin: 0; color: #dcdcaa;">${sqlEndereco}</pre>
+                    ${sqlObservacoes ? `<p style="color: #6a9955; margin: 20px 0 10px 0;">-- Comando SQL para inserir observações:</p><pre style="margin: 0; color: #dcdcaa;">${sqlObservacoes}</pre>` : ''}
+                    
+                    <p style="color: #4ec9b0; margin-top: 20px; font-weight: bold;">✓ Registros inseridos com sucesso!</p>
+                    <p style="color: #ce9178; margin-top: 10px;">ID do Cliente: ${idCliente}</p>
+                    <p style="color: #ce9178;">ID do Endereço: ${idEndereco}</p>
+                </div>
+            `;
+
+            // Exibe mensagem de sucesso
+            document.getElementById('successMessage').style.display = 'block';
+
+            // Rola para mostrar o resultado
+            document.getElementById('sqlOutput').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            // Esconde a mensagem após 5 segundos
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 5000);
+        }
+
+        // Máscara para CPF
+        document.getElementById('cpf').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length <= 11) {
+                value = value.replace(/(\d{3})(\d)/, '$1.$2');
+                value = value.replace(/(\d{3})(\d)/, '$1.$2');
+                value = value.replace(/(\d{3})(\d{1,2})$/, '$1-$2');
+                e.target.value = value;
+            }
+        });
+
+        // Máscara para CEP
+        document.getElementById('cep').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length <= 8) {
+                value = value.replace(/(\d{5})(\d)/, '$1-$2');
+                e.target.value = value;
+            }
+        });
+
+        // Máscara para Telefone
+        document.getElementById('telefone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length <= 11) {
+                value = value.replace(/(\d{2})(\d)/, '($1) $2');
+                value = value.replace(/(\d{5})(\d)/, '$1-$2');
+                e.target.value = value;
+            }
+        });

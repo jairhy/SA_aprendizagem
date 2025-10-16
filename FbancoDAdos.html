@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+     <script src="./prog,js"defer></script>
+    <title>Banco de Dados</title>
+</head>
+<body>
+   
+    <header class="header">
+        <div class="nav-container">
+            <nav>
+                <div class="nav-links">
+                   
+                    <p><a href="index.html">Voltar ao Início</a></p>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+ 
+    <main class="main-content">
+        <h1 class="page-title">Banco de Dados</h1>
+
+        
+        <section class="section">
+            <h2>1. O que é um SGBD? Tipos e Aplicações</h2>
+            
+            <h3>O que é SGBD?</h3>
+            <p>
+                <strong>SGBD (Sistema Gerenciador de Banco de Dados)</strong> é um software que permite criar, 
+                gerenciar, organizar e manipular bancos de dados. Ele funciona como uma interface entre os usuários/aplicações 
+                e os dados armazenados, garantindo segurança, integridade e eficiência no acesso às informações.
+            </p>
+
+            <h3>Principais Funções de um SGBD:</h3>
+            <DIV>
+                <P><strong>Armazenamento:</strong> Guarda dados de forma estruturada</P>
+                <P><strong>Consulta:</strong> Permite buscar informações rapidamente</P>
+                <P><strong>Atualização:</strong> Modifica dados existentes</P>
+                <P><strong>Segurança:</strong> Controla acesso e protege informações</P>
+                <P><strong>Integridade:</strong> Garante consistência dos dados</P>
+                <P><strong>Backup:</strong> Realiza cópias de segurança</P>
+                <P><strong>Concorrência:</strong> Permite múltiplos acessos simultâneos</P>
+            </DIV>
+
+            <h3>Tipos de SGBD:</h3>
+            
+            <p><strong>1. SGBD Relacional (RDBMS)</strong></p>
+            <DIV>
+                <li>Organiza dados em tabelas com linhas e colunas</li>
+                <li>Usa SQL (Structured Query Language)</li>
+                <li>Exemplos: MySQL, PostgreSQL, Oracle, SQL Server</li>
+                <li>Ideal para: sistemas transacionais, ERPs, sistemas bancários</li>
+            </DIV>
+
+            <p><strong>2. SGBD NoSQL</strong></p>
+            <div>
+                <P>Não usa tabelas relacionais tradicionais</P>
+                <P>Mais flexível e escalável</P>
+                <P>Tipos: Documentos (MongoDB), Chave-Valor (Redis), Colunas (Cassandra), Grafos (Neo4j)</P>
+                <P>Ideal para: big data, redes sociais, IoT, aplicações em tempo real</P>
+            </div>
+
+            <p><strong>3. SGBD Hierárquico</strong></p>
+            <div>
+                <P>Organiza dados em estrutura de árvore</P>
+                <P>Relacionamento pai-filho</P>
+                <P>Exemplo: IBM IMS</P>
+                <P>Ideal para: sistemas legados, estruturas organizacionais</P>
+            </div>
+
+            <p><strong>4. SGBD de Rede</strong></p>
+            <div>
+                <P>Permite múltiplos relacionamentos entre dados</P>
+                <P>Mais flexível que o hierárquico</P>
+                <P>Exemplo: IDMS</P>
+            </div>
+
+            <h3>Aplicações de SGBD:</h3>
+            <div>
+                <p><strong>Sistemas Bancários:</strong> Gerenciamento de contas, transações</p>
+                <p><strong>E-commerce:</strong> Catálogo de produtos, pedidos, clientes</p>
+                <p><strong>Redes Sociais:</strong> Perfis de usuários, posts, conexões</p>
+                <p><strong>Saúde:</strong> Prontuários eletrônicos, agendamentos</p>
+                <p><strong>Educação:</strong> Sistemas acadêmicos, notas, matrículas</p>
+                <p><strong>Recursos Humanos:</strong> Folha de pagamento, cadastro de funcionários</p>
+                <p><strong>Logística:</strong> Controle de estoque, rastreamento</p>
+            </div>
+        </section>
+
+    
+        <section class="section">
+            <h2>2. Quais os Principais Bancos de Dados?</h2>
+
+            <table class="database-table">
+                <thead>
+                    <tr>
+                        <th>Banco de Dados</th>
+                        <th>Tipo</th>
+                        <th>Características</th>
+                        <th>Uso Comum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>MySQL</strong></td>
+                        <td>Relacional</td>
+                        <td>Open source, rápido, confiável</td>
+                        <td>Websites, WordPress, aplicações web</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PostgreSQL</strong></td>
+                        <td>Relacional</td>
+                        <td>Open source, robusto, avançado</td>
+                        <td>Aplicações empresariais, análise de dados</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Oracle Database</strong></td>
+                        <td>Relacional</td>
+                        <td>Comercial, alta performance, escalável</td>
+                        <td>Grandes empresas, sistemas críticos</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SQL Server</strong></td>
+                        <td>Relacional</td>
+                        <td>Microsoft, integração Windows</td>
+                        <td>Aplicações .NET, empresas Windows</td>
+                    </tr>
+                    <tr>
+                        <td><strong>MongoDB</strong></td>
+                        <td>NoSQL (Documentos)</td>
+                        <td>Flexível, escalável, JSON</td>
+                        <td>Apps mobile, IoT, big data</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Redis</strong></td>
+                        <td>NoSQL (Chave-Valor)</td>
+                        <td>Em memória, muito rápido, cache</td>
+                        <td>Cache, sessões, filas de mensagens</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cassandra</strong></td>
+                        <td>NoSQL (Colunas)</td>
+                        <td>Distribuído, alta disponibilidade</td>
+                        <td>Big data, streaming, redes sociais</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SQLite</strong></td>
+                        <td>Relacional</td>
+                        <td>Leve, sem servidor, embarcado</td>
+                        <td>Apps mobile, sistemas embarcados</td>
+                    </tr>
+                    <tr>
+                        <td><strong>MariaDB</strong></td>
+                        <td>Relacional</td>
+                        <td>Fork do MySQL, open source</td>
+                        <td>Alternativa ao MySQL, websites</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Elasticsearch</strong></td>
+                        <td>NoSQL (Busca)</td>
+                        <td>Full-text search, análise em tempo real</td>
+                        <td>Busca, logs, análise de dados</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+       
+        <section class="section">
+            <h2>3. O que é um Dicionário de Dados? Quais os Tipos de Dados?</h2>
+            
+            <h3>Dicionário de Dados</h3>
+            <p>
+                O <strong>Dicionário de Dados</strong> é um repositório centralizado que contém informações sobre 
+                a estrutura, organização e definições de todos os dados armazenados no banco de dados. Funciona como 
+                um "manual" que documenta cada elemento do banco.
+            </p>
+
+            <h3>Informações Contidas no Dicionário:</h3>
+            <div>
+                <p><strong>Nome das tabelas:</strong> Identificação de cada tabela</p>
+                <p><strong>Nome das colunas:</strong> Campos de cada tabela</p>
+                <p><strong>Tipo de dados:</strong> Tipo de informação armazenada</p>
+                <p><strong>Tamanho:</strong> Limite de caracteres ou bytes</p>
+                <p><strong>Restrições:</strong> NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY</p>
+                <p><strong>Descrição:</strong> Explicação do propósito do campo</p>
+                <p><strong>Relacionamentos:</strong> Como as tabelas se conectam</p>
+                <p><strong>Índices:</strong> Estruturas para acelerar buscas</p>
+            </div>
+
+            <h3>Tipos de Dados em Bancos de Dados:</h3>
+            
+            <p><strong>1. Numéricos</strong></p>
+            <div>
+                <p><strong>INT / INTEGER:</strong> Números inteiros (ex: 1, 100, -50)</p>
+                <p><strong>SMALLINT:</strong> Inteiros pequenos (-32768 a 32767)</p>
+                <p><strong>BIGINT:</strong> Inteiros grandes</p>
+                <p><strong>DECIMAL / NUMERIC:</strong> Números com precisão decimal fixa (ex: preços)</p>
+                <p><strong>FLOAT / REAL:</strong> Números com ponto flutuante (aproximados)</p>
+                <p><strong>DOUBLE:</strong> Ponto flutuante com precisão dupla</p>
+            </div>
+
+        div
+            <div>
+                <p><strong>CHAR(n):</strong> Texto com tamanho fixo (ex: UF com 2 caracteres)</p>
+                <p><strong>VARCHAR(n):</strong> Texto com tamanho variável (ex: nome, endereço)</p>
+                <p><strong>TEXT:</strong> Texto longo sem limite específico</p>
+                <p><strong>LONGTEXT:</strong> Texto muito longo (até 4GB)</p>
+            </div>
+
+            <p><strong>3. Data e Hora</strong></p>
+            <div>
+                <p><strong>DATE:</strong> Data (AAAA-MM-DD)</p>
+                <p><strong>TIME:</strong> Hora (HH:MM:SS)</p>
+                <p><strong>DATETIME:</strong> Data e hora combinados</p>
+                <p><strong>TIMESTAMP:</strong> Data/hora com fuso horário</p>
+                <p><strong>YEAR:</strong> Apenas o ano</p>
+            </div>
+
+            <p><strong>4. Booleano / Lógico</strong></p>
+            <div>
+                <p><strong>BOOLEAN / BOOL:</strong> Verdadeiro (TRUE/1) ou Falso (FALSE/0)</p>
+                <p><strong>BIT:</strong> Valores binários (0 ou 1)</p>
+            </div>
+
+            <p><strong>5. Binários</strong></p>
+            <div>
+                <p><strong>BLOB:</strong> Binary Large Object (imagens, arquivos)</p>
+                <p><strong>BINARY:</strong> Dados binários de tamanho fixo</p>
+                <p><strong>VARBINARY:</strong> Dados binários de tamanho variável</p>
+            </div>
+
+            <p><strong>6. Especiais</strong></p>
+            <div>
+                <p><strong>JSON:</strong> Documentos JSON estruturados</p>
+                <p><strong>XML:</strong> Documentos XML</p>
+                <p><strong>ENUM:</strong> Lista de valores permitidos</p>
+                <p><strong>UUID:</strong> Identificador único universal</p>
+            </div>
+        </section>
+
+      
+        <section class="section">
+            <h2>4. O que é Modelagem de Banco de Dados? Modelo DER e MER</h2>
+            
+            <h3>Modelagem de Banco de Dados</h3>
+            <p>
+                A <strong>Modelagem de Banco de Dados</strong> é o processo de criar uma representação visual e conceitual 
+                da estrutura de dados que será armazenada no banco. É como fazer uma "planta arquitetônica" antes de 
+                construir um banco de dados, definindo tabelas, campos, relacionamentos e regras.
+            </p>
+
+            <h3>Níveis de Modelagem:</h3>
+            <div>
+                <p><strong>Conceitual:</strong> Visão de alto nível, independente de tecnologia (MER)</p>
+                <p><strong>Lógico:</strong> Define estruturas sem detalhes de implementação (DER)</p>
+                <p><strong>Físico:</strong> Implementação específica do SGBD (SQL, índices, partições)</p>
+            </div>
+
+            <h3>MER - Modelo Entidade-Relacionamento</h3>
+            <p>
+                O <strong>MER (Modelo Entidade-Relacionamento)</strong> é uma representação conceitual de alto nível 
+                que descreve os dados e suas relações sem se preocupar com detalhes técnicos de implementação.
+            </p>
+
+            <p><strong>Componentes do MER:</strong></p>
+            <div>
+                <p><strong>Entidades:</strong> Objetos do mundo real (Cliente, Produto, Pedido)</p>
+                <p><strong>Atributos:</strong> Características das entidades (nome, preço, data)</p>
+                <p><strong>Relacionamentos:</strong> Como as entidades se conectam (Cliente FAZ Pedido)</p>
+                <p><strong>Cardinalidade:</strong> Quantidade de ocorrências (1:1, 1:N, N:M)</p>
+            </div>
+
+            <h3>DER - Diagrama Entidade-Relacionamento</h3>
+            <p>
+                O <strong>DER (Diagrama Entidade-Relacionamento)</strong> é a representação gráfica do MER. 
+                É o desenho visual que mostra entidades, atributos e relacionamentos usando símbolos padronizados.
+            </p>
+
+            <p><strong>Símbolos do DER:</strong></p>
+            <div>
+                <p><strong>Retângulo:</strong> Representa entidades (tabelas)</p>
+                <p><strong>Elipse/Oval:</strong> Representa atributos (campos)</p>
+                <p><strong>Losango:</strong> Representa relacionamentos</p>
+                <p><strong>Linhas:</strong> Conectam entidades aos relacionamentos</p>
+                <p><strong>Sublinhado:</strong> Indica chave primária</p>
+            </div>
+
+            <p><strong>Tipos de Relacionamentos:</strong></p>
+            <div>
+                <p><strong>1:1 (Um para Um):</strong> Pessoa ↔ CPF</p>
+                <p><strong>1:N (Um para Muitos):</strong> Cliente → Pedidos</p>
+                <p><strong>N:M (Muitos para Muitos):</strong> Alunos ↔ Disciplinas</p>
+            </div>
+
+            <h3>Diferença entre MER e DER:</h3>
+            <div>
+                <p><strong>MER:</strong> É o MODELO (conceito teórico, abstrato)</p>
+                <p><strong>DER:</strong> É o DIAGRAMA (representação visual do MER)</p>
+            </div>
+            <p>Em resumo: MER é a teoria, DER é o desenho dessa teoria.</p>
+        </section>
+
+        <section class="section">
+            <h2>5. Exemplo de Diagrama DER</h2>
+            
+            <h3>Sistema de Biblioteca - Diagrama DER</h3>
+            <p>
+                Vamos analisar um diagrama DER para um sistema de biblioteca que gerencia livros, autores e empréstimos.
+            </p>
+
+
+            <div class="image-placeholder">
+                <p><img src="./diagrama de DER.png" alt="" srcset=""><p>
+            </div>
+
+            <h3>Explicação do Diagrama DER:</h3>
+            
+            <p><strong>Entidades (Retângulos):</strong></p>
+            <div>
+                <p><strong>LIVRO:</strong> Representa os livros da biblioteca
+                    <div>
+                        <p>id_livro (PK - Chave Primária)</p>
+                        <p>titulo</p>
+                        <p>isbn</p>
+                        <p>ano_publicacao</p>
+                        <p>editora</p>
+                    </div>
+                </p>
+                <p><strong>AUTOR:</strong> Representa os autores dos livros
+                    <div>
+                        <p>id_autor (PK)</p>
+                        <p>nome</p>
+                 <p>nacionalidade</p>
+                        <p>data_nascimento</p>
+                    </div>div
+                <p><strong>USUARIO:</strong> Representa os usuários da biblioteca
+                    <div>
+                        <p>id_usuario (PK)</p>
+                        <p>nome</p>
+                        <p>cpf</p>
+                        <p>email</p>
+                        <p>telefone</p>
+                    </div>
+                </p>
+                <p><strong>EMPRESTIMO:</strong> Representa os empréstimos realizados
+                    <div>
+                        <p>id_emprestimo (PK)</p>
+                        <p>data_emprestimo</p>
+                        <p>data_devolucao_prevista</p>
+                        <p>data_devolucao_real</p>
+                        <p>status</p>
+                    </div>
+                </p>
+            </div>
+
+            <p><strong>Relacionamentos (Losangos):</strong></p>
+            <div>
+                <p><strong>ESCREVE:</strong> Relacionamento N:M entre AUTOR e LIVRO
+                    <div>
+                        <p>Um autor pode escrever vários livros</p>
+                        <p>Um livro pode ter vários autores</p>
+                    </div>
+                </p>
+                <p><strong>REALIZA:</strong> Relacionamento 1:diventre USUARIO e EMPRESTIMO
+                    <div>
+                        <p>Um usuário pode realizar vários empréstimos</p>
+                        <p>Um empréstimo é feito por apenas um usuário</p>
+                    </div>
+                </p>
+                <p><strong>CONTÉM:</strong> Relacionamento 1:N entre EMPRESTIMO e LIVRO
+                    <div>
+                        <p>Um empréstimo pode conter vários livros</p>
+                        <p>Cada livro em um empréstimo pertence a apenas um empréstimo específico</p>
+                    </div>
+                </p>
+            </div>
+
+            <p><strong>Cardinalidades:</strong></p>
+            <div>
+                <p><strong>N:M (Muitos para Muitos):</strong> AUTOR ↔ LIVRO (precisa de tabela intermediária)</p>
+                <p><strong>1:N (Um para Muitos):</strong> USUARIO → EMPRESTIMO</p>
+                <p><strong>1:N (Um para Muitos):</strong> EMPRESTIMO → LIVRO</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>6. explicação extre sobre Diagrama MER</h2>
+            
+            <h3>Sistema de E-commerce - Modelo Entidade-Relacionamento</h3>
+            <p>
+                Vamos analisar um MER para um sistema de e-commerce que gerencia clientes, produtos e pedidos.
+            </p>
+
+            <h3>Explicação do Modelo MER:</h3>
+            
+            <p><strong>Entidades:</strong></p>
+            <div>
+                <p><strong>CLIENTE</strong>
+                    <div>
+                        <p>Atributos: id_cliente, nome, email, senha, cpf, data_cadastro</li>
+                        <p>Chave Primária: id_cliente</p>
+                    </div>
+                </p>
+                <p><strong>ENDERECO</strong>
+                    <div>
+                        <p>Atributos: id_endereco, rua, numero, complemento, bairro, cidade, estado, cep</li>
+                        <p>Chave Primária: id_endereco</p>
+                        </div>
+                </p>
+                <p><strong>PRODUTO</strong>
+                    <div>
+                        <p>Atributos: id_produto, nome, descricao, preco, estoque, categoria</li>
+                        <p>Chave Primária: id_produto</p>
+                    </div>
+                </p>
+                <p><strong>PEDIDO</strong>
+                    <div>
+                        <p>Atributos: id_pedido, data_pedido, valor_total, status, forma_pagamento</li>
+                        <p>Chave Primária: id_pedido</p>
+                    </div>
+                </p>
+                <p><strong>ITEM_PEDIDO</strong>
+                    <div>
+                        <p>Atributos: id_item, quantidade, preco_unitario, subtotal</li>
+                        <p>Chave Primária: id_item</p>
+                    </div>
+                </p>
+            </div>
+
+            <p><strong>Relacionamentos:</strong></p>
+            <div>
+                <p><strong>POSSUI (1:N):</strong> CLIENTE possui múltiplos ENDERECOS
+                    <div>
+                        <p>Um cliente pode ter vários endereços cadastrados</p>
+                        <p>Cada endereço pertence a apenas um cliente</p>
+                    </div>
+                </p>
+                <p><strong>FAZ (1:N):</strong> CLIENTE faz múltiplos PEDIDOS
+                    <div>
+                        <p>Um cliente pode fazer vários pedidos</p>
+                        <p>Cada pedido é feito por apenas um cliente</p>
+                    </div>
+                </p>
+                <p><strong>CONTEM (N:M):</strong> PEDIDO contém múltiplos PRODUTOS
+                    <div>
+                        <p>Um pedido pode ter vários produtos</p>
+                        <p>Um produto pode estar em vários pedidos</p>
+                        <p>Resolvido pela entidade associativa ITEM_PEDIDO</p>
+                    </div>
+                </p>
+            </div>
+
+            <p><strong>Regras de Negócio:</strong></p>
+            <div>
+                <p>Todo pedido deve ter pelo menos um item</p>
+                <p>O valor total do pedido é calculado pela soma dos subtotais dos itens</p>
+                <p>O estoque do produto deve ser atualizado quando um pedido é confirmado</p>
+                <p>Um cliente deve ter pelo menos um endereço cadastrado</p>
+                <p>O status do pedido pode ser: Pendente, Confirmado, Em Transporte, Entregue, Cancelado</p>
+            </div>
+
+            <p><strong>Diferença Visual MER vs DER:</strong></p>
+            <div>
+                <p><strong>MER:</strong> Mais textual, focado na descrição conceitual</li>
+                <p><strong>DER:</strong> Mais gráfico, usa símbolos padronizados (retângulos, losangos, elipses)</li>
+            </div>
+        </section>
+
+       
+        <section class="section">
+            <h2>7. Formulário de Cadastro com Simulação de Gravação</h2>
+            
+            <h3>Cadastro de Cliente - E-commerce</h3>
+            <p>Preencha o formulário abaixo para simular o cadastro de um novo cliente no banco de dados.</p>
+
+            <div class="form-container">
+                <form id="cadastroForm" onsubmit="event.preventDefault(); gravarDados();">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo *</label>
+                        <input type="text" id="nome" required placeholder="Digite seu nome completo">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" required placeholder="seu@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cpf">CPF *</label>
+                        <input type="text" id="cpf" required placeholder="000.000.000-00" maxlength="14">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefone">Telefone *</label>
+                        <input type="tel" id="telefone" required placeholder="(00) 00000-0000">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dataNascimento">Data de Nascimento *</label>
+                        <input type="date" id="dataNascimento" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="genero">Gênero</label>
+                        <select id="genero">
+                            <option value="">Selecione...</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino">Feminino</option>
+                            <option value="outro">Outro</option>
+                            <option value="nao_informar">Prefiro não informar</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cep">CEP *</label>
+                        <input type="text" id="cep" required placeholder="00000-000" maxlength="9">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="endereco">Endereço *</label>
+                        <input type="text" id="endereco" required placeholder="Rua, número">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="complemento">Complemento</label>
+                        <input type="text" id="complemento" placeholder="Apartamento, bloco, etc.">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bairro">Bairro *</label>
+                        <input type="text" id="bairro" required placeholder="Nome do bairro">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cidade">Cidade *</label>
+                        <input type="text" id="cidade" required placeholder="Nome da cidade">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="estado">Estado *</label>
+                        <select id="estado" required>
+                            <option value="">Selecione...</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="observacoes">Observações</label>
+                        <textarea id="observacoes" placeholder="Informações adicionais (opcional)"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Cadastrar Cliente</button>
+
+                    <div id="successMessage" class="success-message">
+                         Cliente cadastrado com sucesso no banco de dados!
+                    </div>
+                </form>
+            </div>
+
+            <h3>Simulação SQL - Comandos Executados:</h3>
+            <div id="sqlOutput" style="margin-top: 20px;">
+                <p style="color: #666; font-style: italic;">Preencha e envie o formulário para ver os comandos SQL gerados...</p>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
