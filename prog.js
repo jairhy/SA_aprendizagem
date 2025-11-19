@@ -14,7 +14,7 @@
             const estado = document.getElementById('estado').value;
             const observacoes = document.getElementById('observacoes').value;
 
-            // Gera IDs simulados
+            //  Gera IDs simulados
             const idCliente = Math.floor(Math.random() * 10000) + 1;
             const idEndereco = Math.floor(Math.random() * 10000) + 1;
             const dataAtual = new Date().toISOString().split('T')[0];
@@ -90,3 +90,49 @@ VALUES (${idObs}, ${idCliente}, '${observacoes}', '${dataAtual}');`;
                 e.target.value = value;
             }
         });
+
+
+        // Função para calcular valores usando a Lei de Ohm
+function calcularOhm() {
+    let v = parseFloat(document.getElementById('tensao').value);
+    let i = parseFloat(document.getElementById('corrente').value);
+    let r = parseFloat(document.getElementById('resistencia').value);
+
+    if (v && i && !r) {
+        r = v / i;
+        document.getElementById('resistencia').value = r.toFixed(2);
+    } else if (v && !i && r) {
+        i = v / r;
+        document.getElementById('corrente').value = i.toFixed(3);
+    } else if (!v && i && r) {
+        v = i * r;
+        document.getElementById('tensao').value = v.toFixed(2);
+    }
+
+    document.getElementById('ohmResult').style.display = 'block';
+}
+
+// Função para calcular potência elétrica
+function calcularPotencia() {
+    let v = parseFloat(document.getElementById('potTensao').value);
+    let i = parseFloat(document.getElementById('potCorrente').value);
+    let r = parseFloat(document.getElementById('potResistencia').value);
+
+    let p = 0;
+
+    if (v && i) {
+        p = v * i;
+        alert(`Potência = ${p.toFixed(2)} W (V × I)`);
+    } else if (i && r) {
+        p = i * i * r;
+        alert(`Potência = ${p.toFixed(2)} W (I² × R)`);
+    } else if (v && r) {
+        p = (v * v) / r;
+        alert(`Potência = ${p.toFixed(2)} W (V² / R)`);
+    } else {
+        alert('Forneça pelo menos dois valores para calcular a potência');
+        return;
+    }
+
+    document.getElementById('potenciaResult').style.display = 'block';
+}
